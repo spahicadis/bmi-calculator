@@ -1,0 +1,7 @@
+@media screen and (min-width:2325px) {
+  .hero {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+  }
+}
