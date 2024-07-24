@@ -19,14 +19,26 @@
       </div>
     </div>
     <div class="calculator-box">
+      <div class="mode">
+        <span class="mode-info">Mjerne jedinice:</span>
+        <input class="mode1" type="checkbox">
+        <input class="mode2" type="checkbox">
+      </div>
       <h3 class="calculator-heading">Unesite vaše podatke</h3>
-      <p>Spol:</p>
-      <input type="checkbox"><span>M</span>
-      <input type="checkbox"><span>Ž</span>
-      <input type="number"><span>Godine</span>
-      <input type="number"><span>Težina</span>
-      <input type="number"><span>Visina</span>
-      <input type="button"><span>Izračunaj</span>
+      <label class="sex" for="sex">Spol:</label>
+      <input class="sex" type="checkbox" name="sex"><span>M</span>
+      <input class="sex" type="checkbox" name="sex"><span>Ž</span>
+      <label for="years">Vaše godine</label>
+      <input class="years" type="number" name="years">
+      <label class="conditionMode1" for="weight">Vaša težina kg</label>
+      <input  class="conditionMode1" type="number" name="weight">
+      <label class="conditionMode1" for="height">Vaša visina cm</label>
+      <input class="conditionMode1" type="number" name="height">
+      <label class="conditionMode2" for="weight">Vaša težina lbs</label>
+      <input class="weight conditionMode2" type="number" name="weight">
+      <label class="conditionMode2" for="visina">Vaša visina in</label>
+      <input class="height conditionMode2" type="number" name="visina">
+      <input class="action" type="button" value="Izračunaj" class="calculate">
     </div>
   </div>
 </section>

@@ -93,12 +93,10 @@
   transition: 0.3s;
 }
 .calculator-box {
+  position: relative;
+  height: 70vh;
   backdrop-filter: blur(50px);
   margin-right: 15rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   border-radius: 4rem;
   padding: 2rem;
   --card-shadow-color: 4, 9, 20; /* RGB equivalent of #040914 */
@@ -107,7 +105,67 @@
     0px 0.93rem 1.4rem rgba(var(--card-shadow-color), 0.03),
     0px 0.25rem 0.53rem rgba(var(--card-shadow-color), 0.05),
     0px 0.12rem 0.18rem rgba(var(--card-shadow-color), 0.03);
+  }
+
+.calculator-heading {
+  margin-bottom: 2.5rem;
 }
+
+input {
+  display: block;
+  margin-bottom: 1.5rem;
+  background-color: transparent;
+  color: #333333;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.sex {
+  display: inline;
+}
+
+label {
+  display: block;
+  margin-top: 1.5rem;
+}
+
+.calculate {
+  width: 5rem;
+  padding: 12px;
+  background-color: transparent;
+}
+
+.mode {
+  position: relative;
+}
+
+.mode-info {
+  position: absolute;
+  top: -20px;
+  right: 0;
+}
+
+.mode1 {
+  position: absolute;
+  right: 0%;
+  top: 0%;
+  
+}
+.mode2 {
+  position: absolute;
+  right: 10%;
+  top: 0%;
+  padding: 5px
+}
+
+.conditionMode2 {
+  display: none;
+}
+
+
+
+
+
 
 
 
