@@ -24,7 +24,10 @@ const statusMode1 = document.querySelector('.mode1');
 const statusMode2 = document.querySelector('.mode2');
 const conditionalRenderingMode2 = document.querySelectorAll('.conditionMode2')
 const conditionalRenderingMode1 = document.querySelectorAll('.conditionMode1')
+const result = document.querySelector('.generatedResult')
 console.log(conditionalRenderingMode2);
+
+
 
 
 
@@ -52,8 +55,21 @@ statusMode2.addEventListener('change', function() {
   console.log(`test`);
 })
 
+function calculate() {
+  weight = weightInfo.value
+  height = heightInfo.value
 
+  result.innerHTML = weight % (Math.pow(height, 2));
 
+  resetValues()
+}
+
+function resetValues() {
+  weight = null;
+  height = null;
+}
+
+actionCalulcate.addEventListener('click', calculate)
 
 
 
