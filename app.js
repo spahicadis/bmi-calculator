@@ -28,15 +28,21 @@ const result = document.querySelector('.generatedResult')
 console.log(conditionalRenderingMode2);
 
 
-
-
-
-
+//dodati jos jednu varijablu state koja se zove trenutnaMjernaJedinica i incirati je sa metric 
+//na klik checkboxa postavljam tu varijablu na odgovarajucu vrijednost(metric ili imeprial)
+//ako je metric samo promjenim labele da pokazuju na metric 
+// a ako je imperial promjenim labele za imperial
+//samo mi 2 inputa trebaju
+//na oba inputa(za visinu i tezinu. Imam event listenere pomocu kojih sacuvam vrijednosti u varijable height i weight)
+//u calculate funkciju upotrijebim odgovarajucu formulu na osnovu varijable trenutneMjerneJedinice
+//ovo sve neka se desava na eventSubmit koji cu postavit na formu (inputi ce biti unutar forme)
+//ako je checkbox checkiran return
 
 statusMode1.addEventListener('change', function() {
  if(statusMode1.checked == true) {
   conditionalRenderingMode2.forEach((element) => {
     element.style.display = 'block';
+    result.innerHTML = ''
   })
   conditionalRenderingMode1.forEach((element) => {
     element.style.display = 'none';
@@ -55,8 +61,9 @@ statusMode2.addEventListener('change', function() {
   console.log(`test`);
 })
 
-function calculate() {
-  weight = weightInfo.value
+function calculate() { //u zavisnosti od mjerne jedinice, primjenim jednu ili drugu formulu za rezultat. 
+  //how to convert string to a number in javascript
+  weight = weightInfo.value 
   height = heightInfo.value
 
   result.innerHTML = weight % (Math.pow(height, 2));
@@ -70,6 +77,11 @@ function resetValues() {
 }
 
 actionCalulcate.addEventListener('click', calculate)
+
+heightInfo.addEventListener('input', function(e) {
+  height = e.target.value
+  console.log(height);
+}) //single binding
 
 
 
