@@ -25,8 +25,9 @@ let weight = null;
 let height = null;
 let conditionalRendering1 = true;
 let conditionalRendering2 = true;
-let state = `eu`;
+let state = null;
 
+//dom
 const checkSex = document.querySelectorAll('.sex');
 const checkYears = document.querySelector('.checkYears');
 const checkWeight = document.querySelector('.weight');
@@ -34,25 +35,61 @@ const checkHeight = document.querySelector('.height');
 const modeEu = document.querySelector('.mode1');
 const modeUs = document.querySelector('.mode2');
 const conditionalRenderingArr = document.querySelectorAll('.conditionalRendering');
+const result = document.querySelector('.generatedResult')
+const calculateButton = document.querySelector('.action')
 console.log(conditionalRenderingArr);
 
-
-
+//conditionalRendering
 modeEu.addEventListener('change', function() {
-  if(modeEu.checked == true) {
-    
-  }
-})
-modeUs.addEventListener('change', function() {
-  if(modeUs.checked == true) {
-    state = 'us'
-    if(state == 'us') {
-      conditionalRenderingArr.forEach((e) => {
-        e[0].innerHTML = `Vaša težina lbs`
-        e[1].innerHTML = `Vaša visina in`
-
+  if(modeEu.checked) {
+    modeEu.disabled = true;
+    modeUs.checked = false;
+    modeUs.disabled = false;
+    state = 'eu'
+    console.log(state);
+    conditionalRenderingArr.forEach(() => {
+    conditionalRenderingArr[0].innerHTML = `Vaša teżina kg`
+    conditionalRenderingArr[1].innerHTML = `Vaša visina  cm`
       })
     }
+})
+modeUs.addEventListener('change', function() {
+  if(modeUs.checked) {
+    modeUs.disabled = true;
+    modeEu.checked = false;
+    modeEu.disabled = false;
+    state = 'us'
+    console.log(state);
+    if(state == 'us') {
+    conditionalRenderingArr.forEach((e) => {
+      conditionalRenderingArr[0].innerHTML = `Vaša teżina lbs`
+      conditionalRenderingArr[1].innerHTML = `Vaša visina  in`
+    })
+  }
   }
 })
+
+//single binding
+checkWeight.addEventListener('input', function(e) {
+  weight = e.target.value;
+  console.log(weight);
+})
+checkHeight.addEventListener('input', function(e) {
+  height = e.target.value;
+  console.log(height);
+})
+
+function calculate() {
+  result.innerHTML = weight % (Math.pow(height, 2));
+}
+
+calculateButton.addEventListener('click', calculate);
+
+
+
+
+
+
+
+
 
