@@ -21,23 +21,19 @@
     <div class="calculator-box">
       <div class="mode">
         <span class="mode-info">Mjerne jedinice:</span>
-        <input class="mode1" type="checkbox">
-        <input class="mode2" type="checkbox">
+        <input class="mode1" type="checkbox"><span class="eu">eu</span>
+        <input class="mode2" type="checkbox"><span class="us">us</span>
       </div>
       <h3 class="calculator-heading">Unesite vaše podatke</h3>
       <label class="sex" for="sex">Spol:</label>
       <input class="sex" type="checkbox" name="sex"><span>M</span>
       <input class="sex" type="checkbox" name="sex"><span>Ž</span>
       <label for="years">Vaše godine</label>
-      <input class="years" type="number" name="years">
-      <label class="conditionMode1" for="weight">Vaša težina kg</label>
-      <input  class="weight conditionMode1" type="number" name="weight">
-      <label class="conditionMode1" for="height">Vaša visina cm</label>
-      <input class="conditionMode1 height" type="number" name="height">
-      <label class="conditionMode2" for="weight">Vaša težina lbs</label>
-      <input class="weight conditionMode2" type="number" name="weight">
-      <label class="conditionMode2" for="visina">Vaša visina in</label>
-      <input class="height conditionMode2" type="number" name="visina">
+      <input class="yearsInput" type="number" name="years">
+      <label class="conditionalRendering" for="weight">Vaša težina kg</label>
+      <input  class="weight" type="number" name="weight">
+      <label class="conditionalRendering" for="height">Vaša visina cm</label>
+      <input class="height" type="number" name="height">
       <input class="action" type="button" value="Izračunaj" class="calculate">
       <h5 class="generatedResult"></h5>
     </div>

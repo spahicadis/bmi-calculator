@@ -7,27 +7,6 @@ formula izracun BMI
 
 */
 
-let sex = null;
-let years = null;
-let weight = null;
-let height = null;
-let conditionalRendering1 = true;
-let conditionalRendering2 = null;
-
-const sexInfo = document.querySelectorAll('.sex');
-const yearsInfo = document.querySelector('.years');
-const weightInfo = document.querySelector('.weight');
-const heightInfo = document.querySelector('.height');
-const actionCalulcate = document.querySelector('.action')
-const calculatorBox = document.querySelector('.calculator-box');
-const statusMode1 = document.querySelector('.mode1');
-const statusMode2 = document.querySelector('.mode2');
-const conditionalRenderingMode2 = document.querySelectorAll('.conditionMode2')
-const conditionalRenderingMode1 = document.querySelectorAll('.conditionMode1')
-const result = document.querySelector('.generatedResult')
-console.log(conditionalRenderingMode2);
-
-
 //dodati jos jednu varijablu state koja se zove trenutnaMjernaJedinica i incirati je sa metric 
 //na klik checkboxa postavljam tu varijablu na odgovarajucu vrijednost(metric ili imeprial)
 //ako je metric samo promjenim labele da pokazuju na metric 
@@ -38,50 +17,42 @@ console.log(conditionalRenderingMode2);
 //ovo sve neka se desava na eventSubmit koji cu postavit na formu (inputi ce biti unutar forme)
 //ako je checkbox checkiran return
 
-statusMode1.addEventListener('change', function() {
- if(statusMode1.checked == true) {
-  conditionalRenderingMode2.forEach((element) => {
-    element.style.display = 'block';
-    result.innerHTML = ''
-  })
-  conditionalRenderingMode1.forEach((element) => {
-    element.style.display = 'none';
-  })
- } else if (statusMode1.checked == false ) {
-  conditionalRenderingMode2.forEach((element) => {
-    element.style.display = 'none';
-  })
-  conditionalRenderingMode1.forEach((element) => {
-    element.style.display = 'block';
-  })
- }
+
+
+let sex = null;
+let years = null;
+let weight = null;
+let height = null;
+let conditionalRendering1 = true;
+let conditionalRendering2 = true;
+let state = `eu`;
+
+const checkSex = document.querySelectorAll('.sex');
+const checkYears = document.querySelector('.checkYears');
+const checkWeight = document.querySelector('.weight');
+const checkHeight = document.querySelector('.height');
+const modeEu = document.querySelector('.mode1');
+const modeUs = document.querySelector('.mode2');
+const conditionalRenderingArr = document.querySelectorAll('.conditionalRendering');
+console.log(conditionalRenderingArr);
+
+
+
+modeEu.addEventListener('change', function() {
+  if(modeEu.checked == true) {
+    
+  }
 })
+modeUs.addEventListener('change', function() {
+  if(modeUs.checked == true) {
+    state = 'us'
+    if(state == 'us') {
+      conditionalRenderingArr.forEach((e) => {
+        e[0].innerHTML = `Vaša težina lbs`
+        e[1].innerHTML = `Vaša visina in`
 
-statusMode2.addEventListener('change', function() {
-  console.log(`test`);
+      })
+    }
+  }
 })
-
-function calculate() { //u zavisnosti od mjerne jedinice, primjenim jednu ili drugu formulu za rezultat. 
-  //how to convert string to a number in javascript
-  weight = weightInfo.value 
-  height = heightInfo.value
-
-  result.innerHTML = weight % (Math.pow(height, 2));
-
-  resetValues()
-}
-
-function resetValues() {
-  weight = null;
-  height = null;
-}
-
-actionCalulcate.addEventListener('click', calculate)
-
-heightInfo.addEventListener('input', function(e) {
-  height = e.target.value
-  console.log(height);
-}) //single binding
-
-
 

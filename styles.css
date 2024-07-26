@@ -151,15 +151,29 @@ label {
   top: 0%;
   
 }
-.mode2 {
+.mode1 {
   position: absolute;
   right: 10%;
   top: 0%;
   padding: 5px
 }
 
-.conditionMode2 {
-  display: none;
+.mode2 {
+  position: absolute;
+  right: 0%;
+  top: 0%;
+  
+}
+
+.eu {
+  position: absolute;
+  right: 16%;
+  top: 0%;
+}
+
+.us {
+  position: absolute;
+  right: 4%;
 }
 
 
