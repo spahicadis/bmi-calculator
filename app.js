@@ -112,6 +112,8 @@ function reset() {
 
 
 calculateButton.addEventListener('click', calculate)
+//npr kada stavim formu umjesto buttona nista mi ne vraca. kako se forma ponasa?(submit) naravno
+
 
 
 
