@@ -176,6 +176,25 @@ label {
   right: 4%;
 }
 
+input {
+  border-radius: 8px;
+  padding: 5px 7px;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+
+.action {
+  cursor: pointer;
+}
+
+
+.action:active {
+  border-style: solid;
+  border-color: blue;
+}
+
+
+
 
 
 

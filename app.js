@@ -25,7 +25,7 @@ let weight = null;
 let height = null;
 let conditionalRendering1 = true;
 let conditionalRendering2 = true;
-let state = null;
+let state = 'eu';
 
 //dom
 const checkSex = document.querySelectorAll('.sex');
@@ -40,8 +40,8 @@ const calculateButton = document.querySelector('.action');
 const form1 = document.querySelector('.form-check')
 console.log(conditionalRenderingArr);
 
-
 modeEu.checked = true;
+modeEu.disabled = true;
 //conditionalRendering
 modeEu.addEventListener('change', function() {
   if(modeEu.checked) {
