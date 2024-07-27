@@ -29,16 +29,19 @@ let state = null;
 
 //dom
 const checkSex = document.querySelectorAll('.sex');
-const checkYears = document.querySelector('.checkYears');
+const checkYears = document.querySelector('.yearsInput');
 const checkWeight = document.querySelector('.weight');
 const checkHeight = document.querySelector('.height');
 const modeEu = document.querySelector('.mode1');
 const modeUs = document.querySelector('.mode2');
 const conditionalRenderingArr = document.querySelectorAll('.conditionalRendering');
-const result = document.querySelector('.generatedResult')
-const calculateButton = document.querySelector('.action')
+const result = document.querySelector('.generatedResult');
+const calculateButton = document.querySelector('.action');
+const form1 = document.querySelector('.form-check')
 console.log(conditionalRenderingArr);
 
+
+modeEu.checked = true;
 //conditionalRendering
 modeEu.addEventListener('change', function() {
   if(modeEu.checked) {
@@ -47,6 +50,7 @@ modeEu.addEventListener('change', function() {
     modeUs.disabled = false;
     state = 'eu'
     console.log(state);
+    reset()
     conditionalRenderingArr.forEach(() => {
     conditionalRenderingArr[0].innerHTML = `Vaša teżina kg`
     conditionalRenderingArr[1].innerHTML = `Vaša visina  cm`
@@ -60,8 +64,9 @@ modeUs.addEventListener('change', function() {
     modeEu.disabled = false;
     state = 'us'
     console.log(state);
+    reset()
     if(state == 'us') {
-    conditionalRenderingArr.forEach((e) => {
+    conditionalRenderingArr.forEach(() => {
       conditionalRenderingArr[0].innerHTML = `Vaša teżina lbs`
       conditionalRenderingArr[1].innerHTML = `Vaša visina  in`
     })
@@ -79,11 +84,35 @@ checkHeight.addEventListener('input', function(e) {
   console.log(height);
 })
 
+
 function calculate() {
-  result.innerHTML = weight % (Math.pow(height, 2));
+  if(state == 'eu') {
+   let BMI = weight % (Math.pow(height,2))
+   result.innerHTML = `Your BMI is ${BMI}`
+  } else if(state == 'us') {
+    weight*=2.205
+    height%=2.54
+    let BMI = weight % (Math.pow(height,1))
+    result.innerHTML = `Your BMI is ${BMI}`
+  }
 }
 
-calculateButton.addEventListener('click', calculate);
+function reset() {
+  checkSex.forEach((e) => {
+    e.checked = false;
+  })
+  years = null;
+  weight = null;
+  height = null;
+  checkYears.value = '';
+  checkWeight.value = '';
+  checkHeight.value = '';
+  result.innerHTML = ``;
+}
+
+
+calculateButton.addEventListener('click', calculate)
+
 
 
 
